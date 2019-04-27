@@ -9,10 +9,10 @@
 // }
 
 // connect to the database
-include('connect-db.php');
+include('config.php');
 
 // get results from database
-$result = mysqli_query($connection, "SELECT * FROM survey_data");
+$result = mysqli_query($link, "SELECT * FROM urcscon3_atlanti.survey");
 ?>
  
 
