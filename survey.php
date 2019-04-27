@@ -21,20 +21,20 @@
 	<h2>Harry Potter Survey</h2>
 
 	<div>
-		<label for="age">Age? *</label> 
-		<input type="text" name="age" id="age" value="<?php echo $age; ?>"/>
+		<label for="full_name">Full Name? *</label> 
+		<input type="text" name="full_name" id="full_name" value="<?php echo $full_name; ?>"/>
 	</div>
 	<div>
-		<label for="major">Major? *</label> 
-		<input type="text" name="major" id="major" value="<?php echo $major; ?>"/>
+		<label for="email">Email? *</label> 
+		<input type="email" name="email" id="email" value="<?php echo $email; ?>"/>
+	</div>
+	<div>
+		<label for="location">Location? *</label> 
+		<input type="text" name="location" id="location" value="<?php echo $location; ?>"/>
 	</div>
 	<div>
 		<label for="seen">Have you seen the Harry Potter movies? *</label> 
 		<input type="text" name="seen" id="seen" value="<?php echo $seen; ?>"/>
-	</div>
-	<div>
-		<label for="popular">How popular do you think Harry Potter is? *</label> 
-		<input type="text" name="popular" id="popular" value="<?php echo $popular; ?>"/>
 	</div>
 	<div>
 		<label for="watch">Will you watch one of them in the next month? *</label> 

@@ -30,5 +30,8 @@
 	    <a href="survey.php">Take the Survey!</a>
 	  </div>
 	</main>
+	<footer>
+		<a href="login.php"> Administrator Sign In</a>
+	</footer>
 </body>
 </html>
