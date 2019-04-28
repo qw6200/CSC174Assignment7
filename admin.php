@@ -34,9 +34,10 @@ $result = mysqli_query($link, "SELECT * FROM urcscon3_atlanti.survey");
             <th scope="col" >Full Name</th>
             <th scope="col" >Email</th>
             <th scope="col" >Location</th>
-            <th scope="col" >Has Seen</th>
-            <th scope="col" >Will Watch</th>
-            <th scope="col" colspan="2"><em>functions</em></th>
+            <th scope="col" >Timestamp</th>
+            <th scope="col" ># of HP Movies Watched</th>
+            <th scope="col" >Favorite HP Movie</th>
+            <th scope="col" colspan="3"><em>functions</em></th>
           </tr>
         </thead>
         <tbody>
@@ -46,10 +47,12 @@ $result = mysqli_query($link, "SELECT * FROM urcscon3_atlanti.survey");
         ?>
           <tr>
             <td><?php echo $row['id']; ?></td>
-            <td><?php echo $row['firstname']; ?></td>
-            <td><?php echo $row['lastname']; ?></td>
-            <td><?php echo $row['phone']; ?></td>
+            <td><?php echo $row['full_name']; ?></td>
             <td><?php echo $row['email']; ?></td>
+            <td><?php echo $row['location']; ?></td>
+            <td><?php echo $row['created_at']; ?></td>
+            <td><?php echo $row['num_watched']; ?></td>
+            <td><?php echo $row['fav_movie']; ?></td>
             <td><a href="edit.php?id=<?php echo $row['id']; ?>">Edit</a></td>
             <td><a onclick="return confirm('Are you sure you want to delete ID: <?php echo $row["id"]; ?>?')" href="delete.php?id=<?php echo $row['id']; ?>">Delete</a></td>
           </tr>
@@ -60,7 +63,7 @@ $result = mysqli_query($link, "SELECT * FROM urcscon3_atlanti.survey");
         <tbody>
     </table>
     <div>
-        <a href="new.php">Add a new record</a>
+        <a href="survey.php">Add a new record</a>
     </div>
     <p>
         <a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a>

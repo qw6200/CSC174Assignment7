@@ -8,10 +8,10 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location: login.php");
     exit;
 }
-include('renderform.php');
+include('renderEditForm.php');
 
 // connect to the database
-include('connect-db.php');
+include('config.php');
 
 // check if the form (from renderform.php) has been submitted. If it has, process the form and save it to the database
 if (isset($_POST['submit'])) {
@@ -19,25 +19,27 @@ if (isset($_POST['submit'])) {
 	if (is_numeric($_POST['id'])) {
 		// get form data, making sure it is valid
 		$id = $_POST['id'];
-		$firstname = mysqli_real_escape_string($connection, htmlspecialchars($_POST['firstname']));
-		$lastname = mysqli_real_escape_string($connection, htmlspecialchars($_POST['lastname']));
-		$phone = mysqli_real_escape_string($connection, htmlspecialchars($_POST['phone']));
-		$email = mysqli_real_escape_string($connection, htmlspecialchars($_POST['email']));
+		$full_name = mysqli_real_escape_string($link, htmlspecialchars($_POST['full_name']));
+		$email = mysqli_real_escape_string($link, htmlspecialchars($_POST['email']));
+		$location = mysqli_real_escape_string($link, htmlspecialchars($_POST['location']));
+		$created_at = mysqli_real_escape_string($link, htmlspecialchars($_POST['created_at']));
+		$num_watched = mysqli_real_escape_string($link, htmlspecialchars($_POST['num_watched']));
+		$fav_movie = mysqli_real_escape_string($link, htmlspecialchars($_POST['fav_movie']));
 
 		// check that firstname/lastname fields are both filled in
-		if ($firstname == '' || $lastname == '' || $phone == '' || $email == '') {
+		if ($full_name == '' || $email == '' || $location == '' || $created_at == '' || $num_watched == '' || $fav_movie == '') {
 			// generate error message
 			$error = 'ERROR: Please fill in all required fields!';
-
 			//error, display form
-			renderForm($id, $firstname, $lastname, $phone, $email, $error);
+			renderEditForm($id, $full_name, $email, $location, $created_at, $num_watched, $fav_movie, $error);
 
 		} else {
 			// save the data to the database
-			$result = mysqli_query($connection, "UPDATE adesai_phonebook SET firstname='$firstname', lastname='$lastname',phone='$phone', email='$email' WHERE id='$id'");
+			$result = mysqli_query($link, "UPDATE urcscon3_atlanti.survey SET full_name='$fullname', email='$email', location='$location',
+												 created_at=$created_at, num_watched=$num_watched, fav_movie='$fav_movie' WHERE id='$id'");
 
 			// once saved, redirect back to the homepage page to view the results
-			header("Location: index.php");
+			header("Location: admin.php");
 		}
 	} else {
 		// if the 'id' isn't valid, display an error
@@ -49,19 +51,19 @@ if (isset($_POST['submit'])) {
 	if (isset($_GET['id']) && is_numeric($_GET['id']) && $_GET['id'] > 0) {
 		// query db
 		$id = $_GET['id'];
-		$result = mysqli_query($connection, "SELECT * FROM adesai_phonebook WHERE id=$id");
+		$result = mysqli_query($link, "SELECT * FROM urcscon3_atlanti.survey WHERE id=$id");
 		$row = mysqli_fetch_array( $result );
-
 		// check that the 'id' matches up with a row in the databse
 		if($row) {
 			// get data from db
-			$firstname = $row['firstname'];
-			$lastname = $row['lastname'];
-			$phone = $row['phone'];
+			$full_name = $row['full_name'];
 			$email = $row['email'];
+			$location = $row['location'];
+			$num_watched = $row['num_watched'];
+			$fav_movie = $row['fav_movie'];
 
 			// show form
-			renderForm($id, $firstname, $lastname, $phone, $email, '');
+			renderEditForm($full_name, $email, $location, $num_watched, $fav_movie, '');
 		} else {
 			// if no match, display result
 			echo "No results!";
