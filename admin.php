@@ -63,10 +63,13 @@ $result = mysqli_query($link, "SELECT * FROM urcscon3_atlanti.survey");
         <tbody>
     </table>
     <div>
-        <a href="survey.php">Add a new record</a>
+        <a href="survey.php"class="btn btn-primary">Add a new record</a>
     </div>
-    <p>
+    <div>
+        <a href="index.php" class="btn btn-warning">Welcome Page</a>
+    </div>
+    <div>
         <a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a>
-    </p>
+    </div>
 </body>
 </html>

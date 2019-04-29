@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 // connect to the database
 
@@ -40,6 +41,9 @@ include('config.php');
         if(mysqli_query($link, $sql)){
 
             echo "Records added successfully. Thank you for your input.";
+            if(isset($_SESSION['username'])) {
+                header("Location: admin.php");
+            }
 
             $subject = 'Harry Potter Survey Responses';
 

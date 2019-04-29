@@ -63,7 +63,7 @@ if (isset($_POST['submit'])) {
 			$fav_movie = $row['fav_movie'];
 
 			// show form
-			renderEditForm($full_name, $email, $location, $num_watched, $fav_movie, '');
+			renderEditForm($id, $full_name, $email, $location, $num_watched, $fav_movie, '');
 		} else {
 			// if no match, display result
 			echo "No results!";

@@ -42,6 +42,7 @@
 
 		<?php if(isset($_SESSION['username'])) { ?>
 		<a href="logout.php">Logout of your User Account</a>
+		<a href="admin.php">Admin Page</a>
 		<?php } else { ?>
 		<a href="login.php">Login to your User Account</a>
 		<?php } ?>
