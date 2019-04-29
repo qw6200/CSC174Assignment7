@@ -41,15 +41,19 @@ include('config.php');
         if(mysqli_query($link, $sql)){
 
             echo "Records added successfully. Thank you for your input.";
+
             if(isset($_SESSION['username'])) {
                 header("Location: admin.php");
+            } else {
+                $link_address = "index.php";
+                echo "<a href='".$link_address."'>Welcome Page</a>";
             }
 
             $subject = 'Harry Potter Survey Responses';
 
             $message = "Full Name: " . $full_name . "\r\n" . 
                         "Email: " . $email . "\r\n" .
-                        "Location:" . $location . "\r\n" .
+                        "Location: " . $location . "\r\n" .
                         "Number of Harry Potter movies watched: " . $num_watched . "\r\n" . 
                         "Favorite Harry Potter movie: " . $fav_movie;
 
