@@ -1,0 +1,257 @@
+@font-face {
+    font-family: HarryPotter;
+    src: url(../css/hp2.ttf) format('truetype');
+  }
+
+@font-face {
+    font-family: dumble;
+    src: url(../css/dum.ttf) format('truetype');
+  }
+
+@font-face {
+    font-family: dumblethin;
+    src: url(../css/dumthin.ttf) format('truetype');
+  }
+  
+body {
+    background-image: url("../img/rain.gif"), url("../img/hpbg.jpg");
+
+}
+
+.banner {
+    display: flex;
+    background-color: rgb(17, 17, 17);
+    margin: 0 auto;
+    padding: 0px 48px 0px 48px;
+    margin: -8px -16px 28px -16px;
+}
+
+.bannerpart1 {
+    width:600px;
+    font-family: HarryPotter;
+    font-size: 22px;
+    margin: -28px 12px -28px 12px;
+
+}
+
+.bannerpart2 {
+    flex-grow: 1;
+}
+
+.banner a {
+    color: gold;
+    text-decoration: none;
+}
+
+nav {
+    grid-column: 2/4;
+    margin-top: 36px;
+    padding-bottom: 10px;
+    font-size: 36px;
+    font-family: dumble;  
+}
+
+nav ul{
+    display: flex;
+    justify-content: flex-end;
+    padding: 0;
+    margin: 0;
+    margin-right: 20px;
+}
+
+nav li{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-left: 20px;  
+}
+
+nav a{
+    padding: 2px 5px;
+}
+
+nav a:hover { 
+    background-color: grey;
+  }
+
+.ztop {
+    margin: 0 auto;
+    max-width: 77%;
+    text-align: center;
+    border: 8px ridge darkred;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: rgb(48, 28, 28);
+    margin-top: -12px;
+}
+.ztop img {
+    flex-shrink: 0;
+    min-width: 135%;
+    min-height: 135%;
+    margin-left: -150px;
+}
+
+.zbot {
+    display:flex;
+    flex-direction:row;
+    justify-content: space-around;
+    margin: 0 auto;
+    max-width: 77%;
+    padding: 12px;
+}
+
+.zbotleft {
+    display:flex;
+    flex-direction:column;
+    margin-right: 72px;
+    max-width: 60%;
+    padding: 0px 24px 0px 24px;
+    font-family: dumblethin;
+    font-size: 28px;
+    color: rgb(214, 214, 107);
+    background-image: url("../img/hpcloud.jpg");
+    border: 8px ridge darkred;
+}
+
+.zbotright {
+    display:flex;
+    flex-direction:column;
+    border: 8px ridge darkred;
+    max-width: 40%;
+    padding: 12px 12px 12px 12px;
+    margin-left: 72px;
+    background-image: url("../img/hpcloud.jpg");
+}
+
+.zbotright a {
+    text-decoration: none;
+    font-family: HarryPotter;
+    color: gold;
+    font-size: 36px;
+    text-align: center;
+}
+
+.fcont {
+    margin: 0 auto;
+    padding: 12px 24px 12px 24px;
+    max-width: 75%;
+    grid-column: 1/3;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    border: 8px ridge darkred;
+    margin-bottom: 18px;
+    background-image: url("../img/hpcloud.jpg");
+}
+
+.fconttitle {
+    grid-column: 2/3;
+    grid-row: 1;
+    margin: 24px 48px 24px 148px;
+    font-size: 38px;
+    text-align: center;
+    font-family: HarryPotter;
+    border-bottom: 2px solid white;
+    color: gold;
+}
+
+.fcontleft {
+    grid-column: 1;
+    grid-row: 1/12;
+}
+
+.fcontleft img {
+    max-width:145%;
+    height:auto;
+}
+
+.fcontright {
+    grid-column: 2;
+    grid-row: 2/12;
+    margin-left: 148px;
+    font-size: 28px;
+    font-family: dumblethin;
+    color: rgb(230, 230, 144);
+}
+
+.fcontright a {
+    text-decoration: none;
+    color: gold;
+
+}
+
+.moviesurvey {
+    text-align: center;
+    margin-top: -6px;
+    margin-bottom: 6px;
+}
+
+.formcont {
+    width: 750px;
+    border: 2px solid black;
+    margin: 0 auto;
+    font-family: dumble;
+    color: rgb(207, 189, 82);
+    padding: 24px;
+    background-image: url("../img/hpcloud2.jpg");
+    border: 8px ridge darkred;
+}
+
+.formcont h2 {
+    font-size: 48px;
+    border-bottom: 4px solid black;
+    margin: 12px 24px 24px 24px;
+}
+
+.formcont label {
+    font-size: 36px;
+    margin: 18px 0px 12px 64px;
+}
+
+.formcont .topinput {
+    width: 50%;
+    margin: 12px 0px 12px 64px;
+    border: 2px solid black;
+    height: 26px;
+    font-size: 24px;
+    padding: 4px;
+}
+
+.formcont .radio {
+    margin: 12px 0px 0px 64px;
+}
+
+.formcont .radiolabel {
+    margin-left: 24px;
+    font-size: 26px;
+}
+
+.formcont .buttoncont {
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 24px;
+}
+
+.submitbutton {
+    font-size: 36px;
+    font-family: HarryPotter;
+    background-color: black;
+    color: gold;
+    border: 2px solid rgb(26, 25, 25);
+    border-radius: 24px;
+    padding: 6px;
+}
+
+footer a {
+    text-decoration: none;
+    color: gold;
+    font-size: 16px;
+}
+
+.is-current{
+    background-color: red;
+    color: yellow;
+}
+
+

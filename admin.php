@@ -21,12 +21,15 @@ $result = mysqli_query($link, "SELECT * FROM urcscon3_atlanti.survey");
 <head>
     <meta charset="UTF-8">
     <title>Welcome</title>
+    <link rel="stylesheet" href="css/adminstyles.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
     <style type="text/css">
         body{ font: 14px sans-serif; text-align: center; }
     </style>
 </head>
 <body>
+  <h2>Admin Database</h2>
+  <div class="admintablecont">
     <table class="table table-striped table-bordered">
         <thead class="thead-light">
           <tr>
@@ -62,14 +65,18 @@ $result = mysqli_query($link, "SELECT * FROM urcscon3_atlanti.survey");
         ?>
         <tbody>
     </table>
-    <div>
+    </div>
+
+    <div class="adminbuttoncont">
+    <div class="adminbutton">
         <a href="survey.php"class="btn btn-primary">Add a new record</a>
     </div>
-    <div>
+    <div class="adminbutton">
         <a href="index.php" class="btn btn-warning">Welcome Page</a>
     </div>
-    <div>
+    <div class="adminbutton">
         <a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a>
+    </div>
     </div>
 </body>
 </html>

@@ -11,42 +11,59 @@
 </head>
 
 <body>
-	<header>
+	<header class="banner">
+		<div class="bannerpart1">
 		<h1>
 			<a href="index.php">Harry Potter Recap</a>
 		</h1>
+		</div>
+		<div class="bannerpart2">
 		<nav>
-			<a href="index.php">Home</a>
-			<a href="movies.php">Movies</a>
-			<a href="survey.php">Survey</a>
+			<ul>
+				<li><a href="index.php">Home</a></li>
+				<li><a href="movies.php">Movies</a></li>
+				<li><a href="survey.php">Survey</a></li>
+			</ul>
 		</nav>
+		</div>
 	</header>
 
 	<main>
-		<figure>
-			<img src="img/main_image.png" alt="main image">
-		</figure>
+		<section>
+			<div class="ztop">
+			<figure>
+				<img src="img/main_image.png" alt="main image">
+			</figure>
+			</div>
+		</section>
 
-		<div>
-			<p>
-				Harry Potter is a British-American namesake film series based on the eponymous novels by author J. K. Rowling. The series
-				is distributed by Warner Bros. and consists of eight fantasy films, beginning with Harry Potter and the Philosopher's
-				Stone (2001) and culminating with Harry Potter and the Deathly Hallows – Part 2 (2011). Five of the series' eight films
-				are among the 50 highest-grossing films of all time, with Harry Potter and the Deathly Hallows – Part 2 the highest-grossing
-				film in the series and one of 36 films to gross over $1 billion, ranking at number ten.
-			</p>
-			<a href="survey.php">Take the Survey!</a>
-		</div>
+		<article>
+			<div class="zbot">
+				<div class="zbotleft">
+					<p>
+						Harry Potter is a British-American namesake film series based on the eponymous novels by author
+						J. K. Rowling. The series is distributed by Warner Bros. and consists of eight fantasy films,
+						beginning with Harry Potter and the Philosopher's Stone (2001) and culminating with Harry Potter
+						and the Deathly Hallows – Part 2 (2011). Five of the series' eight films are among the 50
+						highest-grossing films of all time.
+					</p>
+				</div>
+				<div class="zbotright">
+					<a href="survey.php">Take the Survey!</a>
+				</div>
+			</div>
+		</article>
 	</main>
 	<footer>
-
 		<?php if(isset($_SESSION['username'])) { ?>
-		<a href="logout.php">Logout of your User Account</a>
-		<a href="admin.php">Admin Page</a>
-		<?php } else { ?>
-		<a href="login.php">Login to your User Account</a>
+			<a href="logout.php">Logout</a>
+			<a href="admin.php">Admin</a>
+			<?php } else { ?>
+			<a href="login.php">Login</a>
 		<?php } ?>
 	</footer>
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="js/menu-highlighter.js"></script>
 </body>
 
 </html>

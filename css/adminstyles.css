@@ -1,0 +1,15 @@
+.admintablecont {
+    max-width: 90%;
+    margin: 0 auto;
+    margin-top: 24px;
+}
+
+.adminbuttoncont {
+    display: inline-flex;
+    margin: 0 auto;
+    max-width: 60%;
+}
+
+.adminbutton {
+    margin: 12px;
+}

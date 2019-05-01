@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 
 <html lang="en">
@@ -10,57 +11,82 @@
 </head>
 
 <body>
-	<header>
+<header class="banner">
+		<div class="bannerpart1">
 		<h1>
 			<a href="index.php">Harry Potter Recap</a>
 		</h1>
+		</div>
+		<div class="bannerpart2">
 		<nav>
-			<a href="index.php">Home</a>
-			<a href="movies.php">Movies</a>
-			<a href="survey.php">Survey</a>
+			<ul>
+				<li><a href="index.php">Home</a></li>
+				<li><a href="movies.php">Movies</a></li>
+				<li><a href="survey.php">Survey</a></li>
+			</ul>
 		</nav>
+		</div>
 	</header>
 
+	<div class="formcont">
 	<h2>Harry Potter Survey</h2>
 	<form action="insert_answers.php" method="post">
 		<div>
 			<label for="full_name">Full Name:</label>
-			<input type="text" name="full_name" id="full_name">
+			<br>
+			<input class="topinput" type="text" name="full_name" id="full_name">
 		</div>
 		<div>
 			<label for="email">Email:</label>
-			<input type="email" name="email" id="email">
+			<br>
+			<input class="topinput" type="email" name="email" id="email">
 		</div>
 		<div>
 			<label for="location">Location:</label>
-			<input type="text" name="location" id="location">
+			<br>
+			<input class="topinput" type="text" name="location" id="location">
 		</div>
 		<div>
-			<label for="seen">How many of the Harry Potter movies have you watched? (0-8)</label>
-			<input type="number" name="num_watched" id="num_watched">
+			<label for="seen">How many of the movies have you watched? (0-8) :</label>
+			<br>
+			<input class="topinput" type="number" name="num_watched" id="num_watched">
 		</div>
 		<div>
-			<label for="watch">Which of the Harry Potter movies is your favorite?</label>
+			<label for="watch">Which of the movies is your favorite? :</label>
 			<br>
-			<input type="radio" name="fav_movie" id="fav_movie" value="Harry Potter and the Philosopher's Stone">Harry Potter and the Philosopher's Stone
+			<input class="radio" type="radio" name="fav_movie" id="fav_movie" value="Harry Potter and the Philosopher's Stone"><span class="radiolabel">Harry Potter and the Philosopher's Stone</span>
 			<br>
-			<input type="radio" name="fav_movie" id="fav_movie" value="Harry Potter and the Chamber of Secrets">Harry Potter and the Chamber of Secrets
+			<input class="radio" type="radio" name="fav_movie" id="fav_movie" value="Harry Potter and the Chamber of Secrets"><span class="radiolabel">Harry Potter and the Chamber of Secrets</span>
 			<br>
-			<input type="radio" name="fav_movie" id="fav_movie" value="Harry Potter and the Prisoner of Azkaban">Harry Potter and the Prisoner of Azkaban
+			<input class="radio" type="radio" name="fav_movie" id="fav_movie" value="Harry Potter and the Prisoner of Azkaban"><span class="radiolabel">Harry Potter and the Prisoner of Azkaban</span>
 			<br>
-			<input type="radio" name="fav_movie" id="fav_movie" value="Harry Potter and the Goblet of Fire">Harry Potter and the Goblet of Fire
+			<input class="radio" type="radio" name="fav_movie" id="fav_movie" value="Harry Potter and the Goblet of Fire"><span class="radiolabel">Harry Potter and the Goblet of Fire</span>
 			<br>
-			<input type="radio" name="fav_movie" id="fav_movie" value="Harry Potter and the Order of the Phoenix">Harry Potter and the Order of the Phoenix
+			<input class="radio" type="radio" name="fav_movie" id="fav_movie" value="Harry Potter and the Order of the Phoenix"><span class="radiolabel">Harry Potter and the Order of the Phoenix</span>
 			<br>
-			<input type="radio" name="fav_movie" id="fav_movie" value="Harry Potter and the Half-Blood Prince">Harry Potter and the Half-Blood Prince
+			<input class="radio" type="radio" name="fav_movie" id="fav_movie" value="Harry Potter and the Half-Blood Prince"><span class="radiolabel">Harry Potter and the Half-Blood Prince</span>
 			<br>
-			<input type="radio" name="fav_movie" id="fav_movie" value="Harry Potter and the Deathly Hallows – Part 1">Harry Potter and the Deathly Hallows – Part 1
+			<input class="radio" type="radio" name="fav_movie" id="fav_movie" value="Harry Potter and the Deathly Hallows – Part 1"><span class="radiolabel">Harry Potter and the Deathly Hallows – Part 1</span>
 			<br>
-			<input type="radio" name="fav_movie" id="fav_movie" value="Harry Potter and the Deathly Hallows – Part 2">Harry Potter and the Deathly Hallows – Part 2
+			<input class="radio" type="radio" name="fav_movie" id="fav_movie" value="Harry Potter and the Deathly Hallows – Part 2"><span class="radiolabel">Harry Potter and the Deathly Hallows – Part 2</span>
 			<br>
 		</div>
-		<input type="submit" value="Submit">
+		<div class="buttoncont">
+			<input class="submitbutton" type="submit" value="Submit">
+		</div>
 	</form>
+	</div>
+
+	<footer>
+		<?php if(isset($_SESSION['username'])) { ?>
+			<a href="logout.php">Logout</a>
+			<a href="admin.php">Admin</a>
+			<?php } else { ?>
+			<a href="login.php">Login</a>
+		<?php } ?>
+	</footer>
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="js/menu-highlighter.js"></script>
 </body>
 
 </html>
